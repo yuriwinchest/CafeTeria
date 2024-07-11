@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #046913; /* Pode ser removido se não quiser fundo verde */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha ao topo */
+    align-items: flex-start; /* Alinha à esquerda */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+}
+
+nav {
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 0;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #cc0000;
+    border-radius: 10px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.container-radio {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.container-radio div {
+    flex: 1;
+    text-align: center;
+}
+
+.container-radio label {
+    margin-bottom: 0px;
+    margin-top: 0;
+    margin-right: 10px;
+    font-weight: 500px;
+    font-size: 14px;
+}
+
+.container-radio input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #007bff;
+}
+
+.botao-cadastrar {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botao-cadastrar:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/img/banner-site.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+.logo-container {
+    text-align: center;
+    color: rgb(19, 2, 2);
+    position: relative;
+}
+
+.logo {
+    width:40%;
+    max-width: 800px;
+}
+
+/* Ajustes gerais */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+    }
+}

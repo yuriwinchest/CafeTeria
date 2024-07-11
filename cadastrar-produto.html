@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro-produto.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="{{ url_for('static', filename='img/icone-serenatto.png') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Início</a></li>
+                    <li><a href="{{ url_for('admin') }}">Administração</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                </ul>
+            </nav>
+            <div class="form-container">
+                <form action="{{ url_for('cadastrar_produto') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo</label>
+                        <div class="container-radio">
+                            <div>
+                                <input type="radio" id="cafe" name="tipo" value="Café" required>
+                                <label for="cafe">Café</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="almoco" name="tipo" value="Almoço" required>
+                                <label for="almoco">Almoço</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao" placeholder="Digite uma descrição" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco">Preço</label>
+                        <input type="number" id="preco" name="preco" placeholder="Digite o preço" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagem">Envie uma imagem do produto</label>
+                        <input type="file" name="imagem" accept="image/*" id="imagem" placeholder="Envie uma imagem" required>
+                    </div>
+
+                    <button type="submit" class="botao-cadastrar">Cadastrar produto</button>
+                </form>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='img/logo-serenatto.png') }}" alt="Logo Serenatto" class="logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

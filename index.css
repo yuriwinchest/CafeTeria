@@ -1,0 +1,192 @@
+.logo {
+    width: 500px;
+}
+
+body {
+    background-color: #333B1E;
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Certifica-se de que o z-index será aplicado corretamente */
+    z-index: 1; /* Define um z-index baixo */
+}
+
+.container-banner {
+    z-index: 1; 
+    width: 100%;
+    height: 50vh;
+    background-image: url("../img/banner-site.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-texto-banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* Certifica-se de que o z-index será aplicado corretamente */
+    z-index: 1; /* Define um z-index baixo para que não sobreponha o menu */
+}
+
+.container-banner h1, .container-banner p {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.container-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 20px;
+}
+
+
+
+
+/*CARDES*/
+
+/* Estilos para os Cards */
+.container-produto {
+    background-color: #111; /* Fundo preto profundo para um visual futurista */
+    border: none; /* Sem borda para um visual clean */
+    border-radius: 15px; /* Borda arredondada mais pronunciada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais intensa e escura */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para hover */
+    flex: 0 1 calc(33.333% - 20px); /* Ajusta a largura para três colunas */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    color: #fff; /* Texto branco para contraste */
+    position: relative; /* Para posicionar elementos dentro do card */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa as bordas */
+}
+
+.container-produto:hover {
+    transform: translateY(-10px); /* Levanta o card ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra mais intensa e escura */
+}
+
+.container-produto img {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Ajusta a altura automaticamente */
+    border-radius: 10px; /* Borda arredondada na imagem */
+    margin-bottom: 15px; /* Espaçamento entre a imagem e o texto */
+    max-height: 250px; /* Altura máxima da imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil na imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço */
+    transition: transform 0.3s ease; /* Transição para hover */
+}
+
+.container-produto img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem ao passar o mouse */
+}
+
+.container-produto p {
+    font-size: 18px; /* Tamanho da fonte do texto */
+    line-height: 1.6; /* Espaçamento entre as linhas */
+    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+    font-family: 'Roboto', sans-serif; /* Fonte moderna */
+}
+
+.container-produto strong { /* Estilos para os títulos em negrito */
+    font-weight: bold;
+    font-size: 24px; /* Título maior */
+    color: #00bfff; /* Cor azul vibrante para destacar */
+    text-transform: uppercase; /* Letras maiúsculas para um visual moderno */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.container-produto p:nth-child(4) { /* Estilos para o quarto parágrafo (preço) */
+    font-size: 24px; /* Preço maior */
+    color: #00bfff; /* Cor azul vibrante para destacar */
+    font-weight: bold;
+    margin-top: 15px; /* Espaçamento acima do preço */
+    font-family: 'Roboto Mono', monospace; /* Fonte monospace para o preço */
+}
+
+/* Efeito de Luz */
+.container-produto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    z-index: -1; /* Fica atrás do card */
+    border-radius: 15px; /* Borda arredondada igual ao card */
+    transition: transform 0.3s ease; /* Transição para hover */
+}
+
+.container-produto:hover::before {
+    transform: scale(1.1); /* Aumenta o efeito de luz ao passar o mouse */
+}
+
+
+
+
+
+
+
+
+
+
+.ornaments {
+    width: 200px;
+    margin-top: 10px;
+}
+
+nav {
+    width: 100%;
+    background-color: #444;
+    padding: 10px 0;
+    z-index: 2; /* Garante que o menu esteja acima de outros elementos */
+    position: relative; /* Certifica-se de que o z-index será aplicado corretamente */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
